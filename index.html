@@ -29,9 +29,11 @@
         </form>
         <div class="navbar-links">
           <a href="#"><i class="fas fa-home"></i> Home</a>
-          <a href="#"><i class="fas fa-pizza-slice"></i> Menu</a>
-          <a href="#" class="cart-button"><i class="fas fa-shopping-cart"></i> Cart</a>
-          <a href="#"><i class="fas fa-user"></i> Account</a>
+          <a href="#" id="cartBtn"><i class="fas fa-shopping-cart"></i> Cart</a>
+          <a id="registerBtn" class="navbar_reg"
+            ><i class="fas fa-user"></i> Sigh Up</a
+          >
+          <a id="loginTrigger" class="navbar_reg"> Log In </a>
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
@@ -39,38 +41,66 @@
     </nav>
     <!-- ! navbar end -->
 
-    <!-- ! -->
-    <!-- <picture class="image-container">
-      <img
-        src="https://static.wixstatic.com/media/3966e0_ced74b589cd6483ea30938e3f8f3af85~mv2.png/v1/fill/w_1872,h_827,al_c,q_90,enc_auto/Richlite-Landing-Page-07.png"
-        alt=""
-        style="object-fit: cover; object-position: 50% 50%; width: 100%"
-        fetchpriority="high"
-      />
-      <div class="image-text">
-        <h1>PIZZA'S PERFECT SURFACE</h1>
-        <p>As a testament to its durability, Richlite is perfect for commercial food service and can be seen in many restaurants throughout the world. With NSF certification since 1962, high heat dishwasher compatibility, and low knife wear performance, the material has proven itself for five decades in this application.</p>
-      </div>
-    </picture> -->
-
-    <!-- <div class="main-content">
-      <div class="image-container">
-        <img src="your-image.jpg" alt="Pizza Restaurant Image" />
-        <div class="image-text">
-          <h1>Welcome to Pizza Restaurant</h1>
-          <p>Enjoy the best pizza in town!</p>
-        </div>
-      </div> -->
-      <!-- Здесь можете добавить другие элементы контента -->
-    </div>
-
     <!-- ! image video -->
     <div class="video-bg">
-   <video src="./assets/Pizza-bish.mp4" type="video/mp4" autoplay muted loop></video>
-   <div class="video-bg__content">
-      <!-- <h1>Video Background</h1> -->
-   </div>
-  </div>
+      <video
+        src="./assets/Pizza-bish.mp4"
+        type="video/mp4"
+        autoplay
+        muted
+        loop
+      ></video>
+      <div class="video-bg__content">
+        <!-- <h1>Video Background</h1> -->
+      </div>
+    </div>
+
+    <!-- ! Форма -->
+    <form class="form modal12">
+      <h3>Sign up</h3>
+      <input id="usernameInp" type="text" placeholder="Username" />
+      <input id="emailInp" type="email" placeholder="Email" />
+      <input id="passwordInp" type="password" placeholder="Password" />
+      <input id="confirmInp" type="password" placeholder="Confirm password" />
+      <button id="signUp">Sign up</button>
+    </form>
+
+    <form class="loginForm modal12">
+      <h3>Log in</h3>
+      <input id="loginEmailInp" type="email" placeholder="Email" />
+      <input id="loginPasswordInp" type="password" placeholder="Password" />
+      <button id="loginBtn">Log in</button>
+    </form>
+
+    <div class="overlay"></div>
+
+    <form class="addProduct modal" style="display: none">
+      <h3>Add product</h3>
+      <input id="imgInp" type="text" placeholder="URL to image" />
+      <input id="titleInp" type="text" placeholder="Title" />
+      <input id="priceInp" type="text" placeholder="Price" />
+      <input id="categoryInp" type="text" placeholder="Category" />
+      <textarea
+        id="descriptionArea"
+        placeholder="Description"
+        class="descriptions"
+      ></textarea>
+      <button id="addProductBtn" class="glow-on-hover">Add product</button>
+    </form>
+
+    <form class="editProduct modal" style="display: none">
+      <h3>Edit product</h3>
+      <input id="imgInpEdit" type="text" placeholder="URL to image" />
+      <input id="titleInpEdit" type="text" placeholder="Title" />
+      <input id="priceInpEdit" type="text" placeholder="Price" />
+      <input id="categoryInpEdit" type="text" placeholder="Category" />
+      <textarea
+        id="descriptionAreaEdit"
+        placeholder="Description"
+        class="descriptions"
+      ></textarea>
+      <button id="addProductBtn" class="glow-on-hover">Confirm changes</button>
+    </form>
 
   </body>
   <script
