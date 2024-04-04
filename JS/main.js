@@ -42,11 +42,11 @@ loginTrigger.addEventListener("click", (e) => {
   loginForm.style.display = "block";
 });
 
-// cartBtn.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   overlay.style.display = "block";
-//   addForm.style.display = "block";
-// });
+cartBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  overlay.style.display = "block";
+  addForm.style.display = "block";
+});
 
 overlay.addEventListener("click", closeModal);
 
@@ -154,97 +154,97 @@ async function login() {
 
 //! check admin
 
-function checkIsAdmin() {
-  const email = JSON.parse(localStorage.getItem("user"))?.email;
-  if (email !== "admin@gmail.com") {
-    addBtn.style.display = "none";
-    return false;
-  } else {
-    addBtn.style.display = "block";
-    return true;
-  }
-}
-checkIsAdmin();
+// function checkIsAdmin() {
+//   const email = JSON.parse(localStorage.getItem("user"))?.email;
+//   if (email !== "admin@gmail.com") {
+//     addBtn.style.display = "none";
+//     return false;
+//   } else {
+//     addBtn.style.display = "block";
+//     return true;
+//   }
+// }
+// checkIsAdmin();
 
-//! function add products to db
+// //! function add products to db
 
-addBtn.addEventListener("click", () => {
-  addForm.style.display = "block";
-  overlay.style.display = "block";
-});
+// addBtn.addEventListener("click", () => {
+//   addForm.style.display = "block";
+//   overlay.style.display = "block";
+// });
 
-addForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
+// addForm.addEventListener("submit", (e) => {
+//   e.preventDefault();
+// });
 
-//! function get products from db
-addProductBtn.addEventListener("click", async () => {
-  if (!imgInp.value || !titleInp.value || !priceInp.value) {
-    alert("Some inputs are empty!");
-    return;
-  }
-  const newProduct = {
-    image: imgInp.value,
-    title: titleInp.value,
-    price: priceInp.value,
-  };
+// //! function get products from db
+// addProductBtn.addEventListener("click", async () => {
+//   if (!imgInp.value || !titleInp.value || !priceInp.value) {
+//     alert("Some inputs are empty!");
+//     return;
+//   }
+//   const newProduct = {
+//     image: imgInp.value,
+//     title: titleInp.value,
+//     price: priceInp.value,
+//   };
 
-  try {
-    const response = await fetch("http://localhost:8000/products", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    });
-    console.log(response);
-    imgInp.value = "";
-    titleInp.value = "";
-    priceInp.value = "";
-    closeModal();
-    render(newProduct);
-  } catch (error) {}
-});
+//   try {
+//     const response = await fetch("http://localhost:8000/products", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(newProduct),
+//     });
+//     console.log(response);
+//     imgInp.value = "";
+//     titleInp.value = "";
+//     priceInp.value = "";
+//     closeModal();
+//     render(newProduct);
+//   } catch (error) {}
+// });
 
-//! function render
+// //! function render
 
-let search = "";
-let category = "";
-let page = 1;
-const limit = 2;
+// let search = "";
+// let category = "";
+// let page = 1;
+// const limit = 2;
 
-async function render() {
-  let API = category
-    ? `${PRODUCTS_API}?q=${search}&category=${category}&_page=${page}&_limit=${limit}`
-    : `${PRODUCTS_API}?q=${search}&_page=${page}&_limit=${limit}`;
-  const res = await fetch(API);
-  const data = await res.json();
+// async function render() {
+//   let API = category
+//     ? `${PRODUCTS_API}?q=${search}&category=${category}&_page=${page}&_limit=${limit}`
+//     : `${PRODUCTS_API}?q=${search}&_page=${page}&_limit=${limit}`;
+//   const res = await fetch(API);
+//   const data = await res.json();
 
-  container.innerHTML = "";
+//   container.innerHTML = "";
 
-  data.forEach((product) => {
-    container.innerHTML += `
-        <div class="producCard">
-      <div class="card" style="width: 18rem;">
-        <img  src=${product.image} class="card-img-top" alt="Product image">
-        <div class="card-body">
-          <h2 class="card-title">${product.title}</h2>
-          <h5 class="card-price">${product.price}$</h5>
-          <span class="card-category">${product.category}</span>
-          <p class="card-text">${product.description}</p>
-          ${
-            checkIsAdmin()
-              ? ` <div class="buttons">
-                <button id=${product.id} class="edit-btn">Edit</button>
-                <button id=${product.id} class="delete-btn">Delete</button>
-              </div>`
-              : ""
-          }
-        </div>
-      </div>
-      </div>
-      `;
-  });
-}
+//   data.forEach((product) => {
+//     container.innerHTML += `
+//         <div class="producCard">
+//       <div class="card" style="width: 18rem;">
+//         <img  src=${product.image} class="card-img-top" alt="Product image">
+//         <div class="card-body">
+//           <h2 class="card-title">${product.title}</h2>
+//           <h5 class="card-price">${product.price}$</h5>
+//           <span class="card-category">${product.category}</span>
+//           <p class="card-text">${product.description}</p>
+//           ${
+//             checkIsAdmin()
+//               ? ` <div class="buttons">
+//                 <button id=${product.id} class="edit-btn">Edit</button>
+//                 <button id=${product.id} class="delete-btn">Delete</button>
+//               </div>`
+//               : ""
+//           }
+//         </div>
+//       </div>
+//       </div>
+//       `;
+//   });
+// }
 
-render();
+// render();
