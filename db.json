@@ -1,19 +1,25 @@
+
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "username": "leo",
+      "email": "leo@email.com",
+      "password": "12345",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
+      "username": "messi",
+      "email": "messi@email.com",
+      "password": "12345",
+      "id": 2
+    } 
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "products": [
+    {
+      "image": "https://media.dodostatic.net/image/r:292x292/11EE7D6003485F2CA5DA14913941902B.webp  ",
+      "title": "pepperoni",
+      "price": "450",
+      "id": 1
+    }
+  ]
 }

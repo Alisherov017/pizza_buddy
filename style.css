@@ -2,6 +2,15 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  /* background-color: #5d7691; */
+}
+
+#registerBtn {
+  cursor: pointer;
+}
+
+#loginTrigger {
+  cursor: pointer;
 }
 
 /* !navbar */
@@ -182,9 +191,125 @@ body {
   width: 96%;
   padding: 10px;
   margin: 10px 0;
-  border: none;
-  border-radius: 3px;
-  color: #171717;
+  border-radius: 50px;
   cursor: pointer;
-  margin-left: 7px;
+  border: 0;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+.modal12 button:hover {
+  letter-spacing: 3px;
+  background-color: hsl(39, 80%, 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(225, 129, 50) 0px 7px 29px 0px;
+}
+
+.modal12 button:active {
+  letter-spacing: 3px;
+  background-color: hsl(33, 80%, 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(220, 135, 24) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+/*! cards  */
+
+.cards-container {
+  display: flex;
+  width: 1300px;
+  margin: 0 auto;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.producCard {
+  width: 303px;
+  margin: 20px 0px 20px 20px;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.842);
+  margin-top: 100px;
+}
+.producCard:hover {
+  border: 1px solid rgba(0, 0, 0, 0.842);
+  box-shadow: -1px 0px 10px 5px rgba(0, 0, 0, 0.35);
+}
+
+.card-img-top {
+  width: 303px;
+  height: 303px;
+  margin: 0;
+  padding: 0;
+  background-color: azure;
+  position: relative;
+}
+.card-price {
+  margin: 5px 8px;
+  font-size: 16px;
+}
+.card-title {
+  margin: 5px 8px;
+}
+.card-category {
+  margin: 5px 8px;
+  color: rgba(128, 128, 128, 0.712);
+}
+.card-text {
+  margin: 5px 8px;
+  color: black;
+}
+
+.buttons {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-left: -50px;
+}
+
+.edit-btn {
+  width: 80px;
+  background-color: black;
+  color: #fff;
+  border: #0056b3;
+
+  padding: 6px 10px;
+  border-radius: 23px;
+  margin: 10px 10px 10px 60px;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+.edit-btn:hover {
+  background-color: #ffd500;
+  color: black;
+  border: none;
+  transition: 0.1s ease-in;
+}
+.delete-btn {
+  width: 80px;
+  background-color: #ffd500;
+  color: black;
+  border: #0056b3;
+  padding: 6px 10px;
+  border-radius: 23px;
+  margin: 0 10px;
+  transition: 0.1s ease-in;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background-color: rgb(203, 13, 13);
+  color: white;
+  transition: 0.1s ease-in;
+}
+
+.pagination {
+  margin: auto;
+  width: fit-content;
 }

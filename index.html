@@ -29,11 +29,11 @@
         </form>
         <div class="navbar-links">
           <a href="#"><i class="fas fa-home"></i> Home</a>
-          <a href="#" id="cartBtn"><i class="fas fa-shopping-cart"></i> Cart</a>
-          <a id="registerBtn" class="navbar_reg"
-            ><i class="fas fa-user"></i> Sigh Up</a
-          >
-          <a id="loginTrigger" class="navbar_reg"> Log In </a>
+          <a href="#" class="add" id="cartBtn"><i class="fas fa-shopping-cart"></i> Cart</a>
+          <a id="registerBtn"><i class="fas fa-user"></i> Sigh Up</a>
+          <a id="loginTrigger">
+            <i class="fa fa-user-circle" aria-hidden="true"></i> Log In
+          </a>
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
@@ -44,7 +44,7 @@
     <!-- ! image video -->
     <div class="video-bg">
       <video
-        src="./assets/Pizza-bish.mp4"
+        src="./assets/Pizza-bish 22.mp4"
         type="video/mp4"
         autoplay
         muted
@@ -74,33 +74,25 @@
 
     <div class="overlay"></div>
 
-    <form class="addProduct modal" style="display: none">
+    <!-- ! add product -->
+    <form class="addProduct modal12" style="display: none">
       <h3>Add product</h3>
       <input id="imgInp" type="text" placeholder="URL to image" />
       <input id="titleInp" type="text" placeholder="Title" />
       <input id="priceInp" type="text" placeholder="Price" />
-      <input id="categoryInp" type="text" placeholder="Category" />
-      <textarea
-        id="descriptionArea"
-        placeholder="Description"
-        class="descriptions"
-      ></textarea>
-      <button id="addProductBtn" class="glow-on-hover">Add product</button>
+      <button id="addProductBtn">Add product</button>
     </form>
 
-    <form class="editProduct modal" style="display: none">
+    <!-- edit -->
+    <form class="editProduct modal12" style="display: none">
       <h3>Edit product</h3>
       <input id="imgInpEdit" type="text" placeholder="URL to image" />
       <input id="titleInpEdit" type="text" placeholder="Title" />
-      <input id="priceInpEdit" type="text" placeholder="Price" />
-      <input id="categoryInpEdit" type="text" placeholder="Category" />
-      <textarea
-        id="descriptionAreaEdit"
-        placeholder="Description"
-        class="descriptions"
-      ></textarea>
+      <input id="priceInpEdit" type="text" placeholder="Price" /> 
       <button id="addProductBtn" class="glow-on-hover">Confirm changes</button>
     </form>
+
+<div class="cards-container"></div>
 
   </body>
   <script
@@ -110,4 +102,4 @@
   ></script>
 
   <script src="./JS/main.js"></script>
-</html>
+</html>   
